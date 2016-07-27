@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical"
+>
+    <!--顶部导航栏-->
+    <include
+        android:id="@+id/ly_bar"
+        layout="@layout/common_table_bar"
+    />
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/convenientBanner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:canLoop="true"
+    />
+    <GridView
+        android:id="@+id/gv_home"
+        android:layout_marginTop="15dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="auto_fit"
+        android:columnWidth="100dip"
+        android:stretchMode="columnWidth"
+        android:gravity="center">
+    </GridView>
+</LinearLayout>

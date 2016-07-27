@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.hzmy.zm.warehouse"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/java', 'src/main/java-gen']
+    }
+}
+
+
+//MaterialDesign  第1部分
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    //volley
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.1.2'
+    compile 'com.squareup.okio:okio:1.6.0'
+    //gosn
+    compile 'com.google.code.gson:gson:2.6.1'
+    //butterknife
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //greenDao
+    compile 'org.greenrobot:greendao:2.2.0'
+
+    //圆形imageView
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+
+    //Android Design Support Library 要和v7包版本一致
+    compile 'com.android.support:design:23.4.0'
+
+    //MaterialDesign  第二部分
+    compile 'com.github.vajro:MaterialDesignLibrary:1.6'
+
+    //fresco  图片处理
+    compile 'com.facebook.fresco:fresco:0.11.0'
+
+    //轮播图
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+}

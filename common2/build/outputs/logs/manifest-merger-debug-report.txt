@@ -1,0 +1,46 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:2:1-20:12
+	package
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:3:11-41
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:5:11-38
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:4:11-35
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:7:5-42
+	android:targetSdkVersion
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:7:15-40
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:9:22-64
+application
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:10:5-19:19
+service#com.litesuits.common.service.NotificationService
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:11:9-18:19
+	android:label
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:13:17-49
+	android:permission
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:14:17-91
+	android:name
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:12:17-60
+intent-filter#android.service.notification.NotificationListenerService
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:15:13-17:29
+action#android.service.notification.NotificationListenerService
+ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:16:17-98
+	android:name
+		ADDED from C:\Users\GrowUp\AndroidStudioProjects\WareHouse\common2\src\main\AndroidManifest.xml:16:25-96
