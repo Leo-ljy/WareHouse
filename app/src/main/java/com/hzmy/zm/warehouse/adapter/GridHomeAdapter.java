@@ -81,15 +81,17 @@ public class GridHomeAdapter extends BaseAdapter
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.item_grid_home, null);
             convertView.setTag(wrapper);
-            convertView.setPadding(15, 15, 15, 15);
+//            convertView.setPadding(15, 15, 15, 15);
         } else
         {
             wrapper = (ViewHolder) convertView.getTag();
         }
-        wrapper.imageView = (ImageView) convertView.findViewById(R.id.device_setting_item_image);
+        wrapper.imageView = (ImageView) convertView.findViewById(R.id.iv_device_setting_item);
         wrapper.imageView.setBackgroundResource(images[position]);
-        wrapper.textView = (TextView) convertView.findViewById(R.id.device_setting_item_text);
+        wrapper.textView = (TextView) convertView.findViewById(R.id.tv_device_setting_item);
         wrapper.textView.setText(texts[position]);
+
+
         return convertView;
     }
 
