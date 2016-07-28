@@ -4,6 +4,26 @@
     <string name="message">消息</string>
     <string name="user">我</string>
     <string name="home_fregment_title">库存管理</string>
+    <string name="goodManage">货物管理</string>
+    <string name="colleague">同事</string>
+    <string name="sell">出库</string>
+    <string name="buy">入库</string>
+    <string name="history">历史记录</string>
+    <string name="total">统计</string>
+    <string name="logistic">物流</string>
+    <string name="introduce">入门教程</string>
+    <string name="more_introduce"></string>
 
+    <string-array name="grid_home_title">
+        <item>货物管理</item>
+        <item>同事</item>
+        <item>出库</item>
+        <item>入库</item>
+        <item>历史记录</item>
+        <item>统计</item>
+        <item>物流</item>
+        <item>入门教程</item>
+        <item></item>
+    </string-array>
 
 </resources>

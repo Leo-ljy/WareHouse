@@ -8,6 +8,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimary">@color/graywhite</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/red</item>
+        <!--标题颜色-->
+        <item name="android:textColorPrimary">@color/black</item>
+
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@color/white</item>
+
+        <!-- 弹出菜单背景色为标题栏的背景色-->
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+
+        <!--弹出菜单与标题栏的垂直间距-->
+        <item name="android:dropDownVerticalOffset">0dip</item>
+
+        <!--弹出菜单不遮挡toolbar-->
+        <item name="actionOverflowMenuStyle">@style/LYJMenuStyle</item>
+    </style>
+
+    <style name="LYJMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+    <item name="overlapAnchor">false</item>
+    </style>
+
     <!--  RadioButton  -->
     <style name="tab_menu_item">
         <item name="android:layout_width">0dp</item>

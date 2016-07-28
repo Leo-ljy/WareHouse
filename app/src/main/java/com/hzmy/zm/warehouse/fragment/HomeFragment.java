@@ -1,5 +1,6 @@
 package com.hzmy.zm.warehouse.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.GridHomeAdapter;
 import com.hzmy.zm.warehouse.third_party_libs.convenient_banner.NetworkImageHolderView;
+import com.hzmy.zm.warehouse.ui.GoodsActivity;
 import com.hzmy.zm.warehouse.utils.ToastUtils;
 
 import java.util.Arrays;
@@ -126,37 +128,40 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id)
     {
+        Intent intent = null;
         switch (position)
         {
+            default:
             case 0:
-                ToastUtils.show(mAppContext, "0");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 1:
-                ToastUtils.show(mAppContext, "1");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 2:
-                ToastUtils.show(mAppContext, "2");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 3:
-                ToastUtils.show(mAppContext, "3");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 4:
-                ToastUtils.show(mAppContext, "4");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 5:
-                ToastUtils.show(mAppContext, "5");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 6:
-                ToastUtils.show(mAppContext, "6");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 7:
-                ToastUtils.show(mAppContext, "7");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 8:
-                ToastUtils.show(mAppContext, "8");
+                intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
-
         }
+
+        startActivity(intent);
     }
 
     @Override

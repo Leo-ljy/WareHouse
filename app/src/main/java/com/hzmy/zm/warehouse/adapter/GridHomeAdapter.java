@@ -39,7 +39,8 @@ public class GridHomeAdapter extends BaseAdapter
             R.mipmap.home_grid_view_item9,
             };
 
-    private String[] texts = {
+    private String[] texts = null;
+    /* {
             "货物管理",
             "同事",
             "出库",
@@ -49,7 +50,7 @@ public class GridHomeAdapter extends BaseAdapter
             "物流",
             "入门教程",
             ""
-    };
+    };*/
 
     public int getCount()
     {
@@ -75,13 +76,15 @@ public class GridHomeAdapter extends BaseAdapter
     public View getView(int position, View convertView, ViewGroup parent)
     {
         ViewHolder wrapper;
+
+        texts = context.getResources().getStringArray(R.array.grid_home_title);
+
         if (convertView == null)
         {
             wrapper = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.item_grid_home, null);
             convertView.setTag(wrapper);
-//            convertView.setPadding(15, 15, 15, 15);
         } else
         {
             wrapper = (ViewHolder) convertView.getTag();

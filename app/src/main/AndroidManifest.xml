@@ -5,7 +5,7 @@
 
 
     <!--忽略materialDesign的最低版本，否则会报错  当前项目最低版本14，而MaterialDesign最低版本是16,所以要加上这句话-->
-    <uses-sdk  tools:overrideLibrary="
+    <uses-sdk tools:overrideLibrary="
     com.gc.materialdesign, com.litesuits.common, cn.trinea.android.common
     "/>
 
@@ -30,17 +30,17 @@
         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
-
                 <action android:name="android.net.wifi.STATE_CHANGE"/>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
-
-
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.BaseActivity"
+        <activity android:name=".app.BaseActivity"/>
+
+        <activity android:name=".ui.GoodsActivity"
+                  android:theme="@style/NoActionBarTheme"
+                  android:label="@string/goodManage"
         />
     </application>
 
