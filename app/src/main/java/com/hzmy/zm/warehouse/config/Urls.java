@@ -13,4 +13,15 @@ public class Urls
     public static final String mJsonUrl1 = "http://www.mocky.io/v2/56c9d8c9110000c62f4e0bb0";
     public static final String mJsonUrl2 = "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2";
     public static final String mImageUrl = "https://d262ilb51hltx0.cloudfront.net/max/800/1*dWGwx6UUjc0tocYzFNBLEw.jpeg";
+
+
+    /**
+     * 说明：	      商品列表json数据地址                                             <br>
+     * 作者：         追梦                                     <br>
+     * 邮箱：        1521541979@qq.com              <br>
+     * 公司：        杭州码友网络科技有限公司   <br>
+     * 日期：        2016/7/28 15:19                        <br>
+     */
+    public static final String goodsJsonUrl = "http://www.mocky.io/v2/5799b0f2100000531a9e8322";
+
 }

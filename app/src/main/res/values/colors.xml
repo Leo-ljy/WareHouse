@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Goods Item-->
     <color name="griditems_bg">#ffe8ecef</color>
     <color name="commo_text_color">#ff333333</color>
     <color name="line">#ffd3dde6</color>
+    <color name="count_text_color_light">#9d9d9d</color>
+
+    <color name="blog_title_text_color_light">#111111</color>
+    <color name="text_light">#3f000000</color>
+    <color name="light_gray">#1a000000</color>
 
 
     <color name="colorPrimary">#3F51B5</color>

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.hzmy.zm.warehouse.third_party_libs.greendao.manager.DaoMaster;
 import com.hzmy.zm.warehouse.third_party_libs.greendao.manager.DaoSession;
 
@@ -61,6 +62,7 @@ public class AppContext extends Application
     {
         super.onCreate();
         instance = this;
+        Fresco.initialize(this);
     }
 
     //-------------------GreenDao  相关--------------------------
