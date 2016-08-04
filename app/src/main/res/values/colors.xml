@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+
+    <color name="fragment_background">#FFF7F7F7</color>
     <!--Goods Item-->
     <color name="griditems_bg">#ffe8ecef</color>
     <color name="commo_text_color">#ff333333</color>

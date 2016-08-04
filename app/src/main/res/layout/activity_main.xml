@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/rg_height"
         android:layout_alignParentBottom="true"
-        android:background="@color/graywhite"
+        android:background="@color/fragment_background"
         android:orientation="horizontal">
 
         <RadioButton
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/division_heigth"
         android:layout_above="@id/rg_tab_bar"
-        android:background="@color/white"/>
+        android:background="@drawable/divider"/>
 
     <FrameLayout
         android:id="@+id/ly_content"

@@ -46,6 +46,36 @@
         <item name="android:textColor">@drawable/tab_menu_text</item>
         <item name="android:textSize">10.0sp</item>
     </style>
-W
+
+
+    <style name="search_item_right">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="search_item_left">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="div_white">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <!--<item name="android:background">@color/white</item>
+     <item name="android:background">@drawable/divider</item>
+    -->
+
+    <style name="div_gray">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/graywhite</item>
+    </style>
+
 
 </resources>

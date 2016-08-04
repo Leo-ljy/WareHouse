@@ -13,6 +13,7 @@
     <string name="logistic">物流</string>
     <string name="introduce">入门教程</string>
     <string name="more_introduce"></string>
+    <string name="go_back">返回</string>
 
     <string-array name="grid_home_title">
         <item>货物管理</item>
@@ -26,4 +27,17 @@
         <item></item>
     </string-array>
 
+    <string name="all_category">所有分类</string>
+    <string name="all_type">所有类型</string>
+    <string name="search_goods">搜索商品</string>
+    <string name="select_category">选择类别</string>
+    <string name="device">喷码机</string>
+    <string name="user_center">用户中心</string>
+    
+    <string-array name="user_certer_arr">
+        <item>客户管理</item>
+        <item>产品管理</item>
+        <item>物流管理</item>
+        <item>设置管理</item>
+    </string-array>
 </resources>

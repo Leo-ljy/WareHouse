@@ -1,19 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_background"
+    android:orientation="vertical">
     <!--顶部导航栏-->
     <include
         android:id="@+id/ly_bar"
         layout="@layout/common_table_bar"
     />
-    <TextView
-        android:layout_width="wrap_content"
+    <View
+        style="@style/div_white"/>
+    <LinearLayout
+        android:id="@+id/lly_fg_user_info"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="用户"
-        android:id="@+id/textView"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/fresco_user_portrait"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:focusable="false"
+            android:scaleType="centerCrop"
+            fresco:roundAsCircle="true"
+            fresco:placeholderImage="@mipmap/ic_place_img"
+            fresco:placeholderImageScaleType="fitCenter"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+        >
+            <TextView
+                android:id="@+id/tv_company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:text="杭州威克达机电设备有限公司"/>
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:text="龙傲天"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/setting_view_arrow"/>
+    </LinearLayout>
+    <View
+        style="@style/div_white"/>
 
-    />
+    <com.dtr.settingview.lib.SettingView
+        android:id="@+id/setting_view_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:iOSStyle="false" />
+
+    <com.dtr.settingview.lib.SettingView
+        android:id="@+id/setting_view_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        app:iOSStyle="false" />
+
+
 </LinearLayout>

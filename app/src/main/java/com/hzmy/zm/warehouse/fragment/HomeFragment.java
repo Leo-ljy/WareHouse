@@ -19,6 +19,7 @@ import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.GridHomeAdapter;
 import com.hzmy.zm.warehouse.third_party_libs.convenient_banner.NetworkImageHolderView;
 import com.hzmy.zm.warehouse.ui.GoodsActivity;
+import com.hzmy.zm.warehouse.utils.LogUtils;
 import com.hzmy.zm.warehouse.utils.ToastUtils;
 
 import java.util.Arrays;
@@ -41,16 +42,12 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     @Bind(R.id.btn_left)
     Button btnLeft;
-    @Bind(R.id.btn_left_back)
-    ImageButton btnLeftBack;
     @Bind(R.id.tv_middle)
     TextView tvMiddle;
     @Bind(R.id.btn_right)
     Button btnRight;
     @Bind(R.id.ly_top_bar)
     RelativeLayout lyTopBar;
-    @Bind(R.id.div_view)
-    View divView;
     @Bind(R.id.gv_home)
     GridView gvHome;
     @Bind(R.id.convenientBanner)
@@ -59,13 +56,14 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
     private List<String> networkImages;
     private String[] images = {
-            "http://img2.imgtn.bdimg.com/it/u=3093785514,1341050958&fm=21&gp=0.jpg",
             "http://img2.3lian.com/2014/f2/37/d/40.jpg",
-            "http://d.3987.com/sqmy_131219/001.jpg",
             "http://img2.3lian.com/2014/f2/37/d/39.jpg",
             "http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg",
             "http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"
     };
+
+    private static  String TAG =  "HomeFragment";
+
 
     @Override
     protected View initView()
@@ -132,6 +130,8 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         {
             default:
             case 0:
+                LogUtils.d(TAG,"跳转到货物管理");
+
                 intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 1:
@@ -161,6 +161,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         }
 
         startActivity(intent);
+
     }
 
     @Override
@@ -185,16 +186,19 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         switch (position)
         {
             case 0:
-                ToastUtils.show(mAppContext, "轮播图0");
-                break;
-            case 1:
                 ToastUtils.show(mAppContext, "轮播图1");
                 break;
-            case 2:
+            case 1:
                 ToastUtils.show(mAppContext, "轮播图2");
                 break;
-            case 3:
+            case 2:
                 ToastUtils.show(mAppContext, "轮播图3");
+                break;
+            case 3:
+                ToastUtils.show(mAppContext, "轮播图4");
+                break;
+            case 4:
+                ToastUtils.show(mAppContext, "轮播图5");
                 break;
         }
     }

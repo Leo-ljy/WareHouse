@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <TextView
+                style="@style/search_item_left"
+                android:text="分类"
+            />
+            <EditText
+                android:id="@+id/et_goods_category"
+                style="@style/search_item_right"
+                android:hint="所有分类 "
+            />
+        </LinearLayout>
+        <View
+            style="@style/div_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/search_item_left"
+                android:text="型号"
+            />
+            <EditText
+                android:id="@+id/et_goods_type"
+                style="@style/search_item_right"
+                android:hint="所有型号 "
+            />
+        </LinearLayout>
+        <View
+            style="@style/div_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/search_item_left"
+                android:text="商品"
+            />
+            <EditText
+                android:id="@+id/et_goods_name"
+                style="@style/search_item_right"
+                android:hint="商品名称 "
+            />
+        </LinearLayout>
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="搜索"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

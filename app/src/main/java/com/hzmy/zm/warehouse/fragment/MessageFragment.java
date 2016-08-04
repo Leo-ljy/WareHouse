@@ -32,6 +32,7 @@ public class MessageFragment extends BaseFragment
     protected View initView()
     {
         messageFragmentView = View.inflate(mAppContext, R.layout.fragment_message, null);
+        ButterKnife.bind(this, messageFragmentView);
 
         return messageFragmentView;
     }
@@ -39,16 +40,9 @@ public class MessageFragment extends BaseFragment
     @Override
     protected void initData()
     {
-
+        tvMiddle.setText(R.string.message);
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
     @Override
     public void onDestroyView()

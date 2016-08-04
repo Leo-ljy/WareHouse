@@ -99,7 +99,7 @@ public class ListViewGoodsAdapter extends BaseAdapter
         listItemView.tv_goods_unit_name.setText(temp.getUnitName());
         listItemView.tv_goods_type_name.setText(temp.getTypeName());
 
-        LogUtils.d(TAG, "适配中： goodName: " + temp.getGoodsName());
+        LogUtils.d("适配中： goodName: " + temp.getGoodsName());
 
 
         return convertView;
