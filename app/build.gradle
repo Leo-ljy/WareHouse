@@ -49,14 +49,10 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     //greenDao
     compile 'org.greenrobot:greendao:2.2.0'
-    //圆形imageView
-    compile 'de.hdodenhof:circleimageview:2.0.0'
     //Android Design Support Library 要和v7包版本一致
     compile 'com.android.support:design:23.4.0'
     //MaterialDesign  第二部分
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
-    //fresco  图片处理
-    compile 'com.facebook.fresco:fresco:0.11.0'
     //轮播图
     compile 'com.bigkoo:convenientbanner:2.0.5'
     //下拉刷新
@@ -64,4 +60,6 @@ dependencies {
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'in.srain.cube:cube-sdk:1.0.44.39-SNAPSHOT@aar'
     compile project(':settingViewLibrary')
+    // Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }

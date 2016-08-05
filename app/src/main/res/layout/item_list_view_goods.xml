@@ -12,7 +12,18 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+
+        <ImageView
+            android:id="@+id/fresco_goods_item"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+        />
+<!--        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/fresco_goods_item"
             android:layout_width="90dp"
             android:layout_height="90dp"
@@ -23,7 +34,7 @@
             android:scaleType="centerCrop"
             fresco:placeholderImage="@mipmap/ic_place_img"
             fresco:placeholderImageScaleType="fitCenter"
-        />
+        />-->
 
 
         <LinearLayout

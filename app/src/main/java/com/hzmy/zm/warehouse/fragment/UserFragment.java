@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,8 +12,8 @@ import com.dtr.settingview.lib.SettingView;
 import com.dtr.settingview.lib.entity.SettingData;
 import com.dtr.settingview.lib.entity.SettingViewItemData;
 import com.dtr.settingview.lib.item.BasicItemViewH;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.hzmy.zm.warehouse.R;
+import com.hzmy.zm.warehouse.third_party_libs.glide.ImageManager;
 import com.hzmy.zm.warehouse.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class UserFragment extends BaseFragment
     @Bind(R.id.setting_view_02)
     SettingView mSettingView2;
     @Bind(R.id.fresco_user_portrait)
-    SimpleDraweeView frescoUserPortrait;
+    ImageView frescoUserPortrait;
     @Bind(R.id.tv_company_name)
     TextView tvCompanyName;
     @Bind(R.id.tv_user_name)
@@ -65,6 +66,11 @@ public class UserFragment extends BaseFragment
     @Override
     protected void initData()
     {
+        String url = "";
+
+        ImageManager imageManager = new ImageManager(mAppContext);
+        imageManager.loadCircleImage(url, frescoUserPortrait, R.mipmap.ic_place_img);
+
 
         tvMiddle.setText(getString(R.string.user_center));
         settingStringNameArr = getResources().getStringArray(R.array.user_certer_arr);

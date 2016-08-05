@@ -1,5 +1,6 @@
 package com.hzmy.zm.warehouse.ui;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.ListViewGoodsAdapter;
 import com.hzmy.zm.warehouse.bean.Goods;
+import com.hzmy.zm.warehouse.bean.drop_down.FilterData;
 import com.hzmy.zm.warehouse.config.Urls;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.manage.VolleyManager;
 import com.hzmy.zm.warehouse.utils.LogUtils;
@@ -57,13 +58,16 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     @Bind(R.id.load_more_list_view_ptr_frame)
     PtrFrameLayout mPtrFrameLayout;
 
+
     private Context mContext;
+    private Activity mActivity;
     private List<Goods> listDatas = new ArrayList<>();
     private static String TAG = "GoodsActivity";
     private ListViewGoodsAdapter lv_adapter;
 
     private int start = 0;
     private int count = 15;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
@@ -87,6 +91,7 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     private void initView()
     {
         this.mContext = this;
+        this.mActivity = this;
         toolbar.setOnMenuItemClickListener(this);
     }
 
@@ -99,6 +104,8 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
      */
     private void initData()
     {
+
+
         //-----------------------------------------------分割线----------------------------------------
 
 
@@ -112,33 +119,41 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         lv_adapter = new ListViewGoodsAdapter(mContext, listDatas);
         mListView.setAdapter(lv_adapter);
 
+
         //3.设置下拉刷新组件和事件监听
         mPtrFrameLayout = (PtrFrameLayout) findViewById(R.id.load_more_list_view_ptr_frame);
         mPtrFrameLayout.setLoadingMinTime(1000);
-        mPtrFrameLayout.setPtrHandler(new PtrHandler() {
+        mPtrFrameLayout.setPtrHandler(new PtrHandler()
+        {
             @Override
-            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header)
+            {
                 // here check list view, not content.
                 return PtrDefaultHandler.checkContentCanBePulledDown(frame, mListView, header);
             }
 
             @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
+            public void onRefreshBegin(PtrFrameLayout frame)
+            {
                 //实现下拉刷新的功能
                 Log.i("test", "-----onRefreshBegin-----");
-                mPtrFrameLayout.postDelayed(new Runnable() {
+                mPtrFrameLayout.postDelayed(new Runnable()
+                {
                     @Override
-                    public void run() {
+                    public void run()
+                    {
                         start = 0;
-                       refreshData(start, count);
+                        refreshData(start, count);
                     }
                 }, 500);
             }
         });
         //设置延时自动刷新数据
-        mPtrFrameLayout.postDelayed(new Runnable() {
+        mPtrFrameLayout.postDelayed(new Runnable()
+        {
             @Override
-            public void run() {
+            public void run()
+            {
                 mPtrFrameLayout.autoRefresh(false);
             }
         }, 200);
@@ -147,15 +162,19 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         mLoadMoreListViewContainer.setAutoLoadMore(true);//设置是否自动加载更多
         mLoadMoreListViewContainer.useDefaultHeader();
         //5.添加加载更多的事件监听
-        mLoadMoreListViewContainer.setLoadMoreHandler(new LoadMoreHandler() {
+        mLoadMoreListViewContainer.setLoadMoreHandler(new LoadMoreHandler()
+        {
             @Override
-            public void onLoadMore(LoadMoreContainer loadMoreContainer) {
+            public void onLoadMore(LoadMoreContainer loadMoreContainer)
+            {
                 //模拟加载更多的业务处理
-                mLoadMoreListViewContainer.postDelayed(new Runnable() {
+                mLoadMoreListViewContainer.postDelayed(new Runnable()
+                {
                     @Override
-                    public void run() {
+                    public void run()
+                    {
                         start++;
-                        loadMoreData(start * count,count);
+                        loadMoreData(start * count, count);
                     }
                 }, 1000);
             }
@@ -163,6 +182,7 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
 
 
     }
+
 
     public void refreshData(int start, int count)
     {
@@ -195,7 +215,8 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         });
     }
 
-    public void loadMoreData(int start, final int count){
+    public void loadMoreData(int start, final int count)
+    {
 
         Map<String, String> map = new HashMap<String, String>();
         map.put("startPage", String.valueOf(start));
@@ -209,13 +230,15 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
                 List<Goods> tempList = Arrays.asList(response);
                 listDatas.addAll(tempList);
 
-                if (tempList.size() > count) {
+                if (tempList.size() > count)
+                {
 //                          mLoadMoreListViewContainer.loadMoreFinish(true, false);
                     //以下是加载失败的情节
                     int errorCode = 0;
                     String errorMessage = "加载失败，点击加载更多";
                     mLoadMoreListViewContainer.loadMoreError(errorCode, errorMessage);
-                } else{
+                } else
+                {
                     mLoadMoreListViewContainer.loadMoreFinish(false, true);
                 }
                 lv_adapter.notifyDataSetChanged();
@@ -231,8 +254,6 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         });
 
     }
-
-
 
 
     @Override

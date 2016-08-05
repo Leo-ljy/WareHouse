@@ -12,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.config.Urls;
+import com.hzmy.zm.warehouse.third_party_libs.glide.ImageManager;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.beans.Person;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.manage.VolleyManager;
 
@@ -23,7 +24,6 @@ import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * 作者：        追梦
@@ -39,8 +39,9 @@ public class GsonDemoActivity extends AppCompatActivity
     @Bind(R.id.imageview)
     ImageView mImageview;
     @Bind(R.id.circleimageview)
-    CircleImageView mCircleimageview;
+    ImageView mCircleimageview;
 
+    public ImageManager imageManager;
     private String TAG = "Gson";
 
     @Override
@@ -136,19 +137,21 @@ public class GsonDemoActivity extends AppCompatActivity
      * 加载圆形图片
      */
     private void getCircleImage() {
-
-        VolleyManager.newInstance().ImageRequest(TAG, Urls.mImageUrl,
-                new Response.Listener<Bitmap>() {
-                    @Override
-                    public void onResponse(Bitmap bitmap) {
-                        mCircleimageview.setImageBitmap(bitmap);
-                    }
-                }, 0, 0, ImageView.ScaleType.CENTER_INSIDE, null,
-                new Response.ErrorListener() {
-                    public void onErrorResponse(VolleyError error) {
-                        mCircleimageview.setImageResource(R.mipmap.ic_error);
-                    }
-                });
+        imageManager = new ImageManager(this);
+        imageManager.loadCircleImage(Urls.mImageUrl, mCircleimageview);
+//        VolleyManager.newInstance().ImageRequest(TAG, Urls.mImageUrl,
+//                new Response.Listener<Bitmap>() {
+//                    @Override
+//                    public void onResponse(Bitmap bitmap) {
+//                        mCircleimageview.setImageBitmap(bitmap);
+//
+//                    }
+//                }, 0, 0, ImageView.ScaleType.CENTER_INSIDE, null,
+//                new Response.ErrorListener() {
+//                    public void onErrorResponse(VolleyError error) {
+//                        mCircleimageview.setImageResource(R.mipmap.ic_error);
+//                    }
+//                });
     }
 
     @Override
