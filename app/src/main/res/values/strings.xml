@@ -33,7 +33,9 @@
     <string name="select_category">选择类别</string>
     <string name="device">喷码机</string>
     <string name="user_center">用户中心</string>
-    
+    <string name="default_company_name">杭州杰特电子科技有限公司</string>
+    <string name="default_user_name">龙傲天</string>
+
     <string-array name="user_certer_arr">
         <item>客户管理</item>
         <item>产品管理</item>

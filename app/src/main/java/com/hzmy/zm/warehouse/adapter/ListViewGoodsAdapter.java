@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.drop_down.BaseListAdapter;
-import com.hzmy.zm.warehouse.bean.Goods;
+import com.hzmy.zm.warehouse.bean.GoodsEntity;
 import com.hzmy.zm.warehouse.third_party_libs.glide.ImageManager;
 import com.hzmy.zm.warehouse.utils.LogUtils;
 
@@ -23,7 +23,7 @@ import java.util.List;
  * 公司：        杭州码友网络科技有限公司             <br>
  * 日期：        2016/8/4 15:30                               <br>
  */
-public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
+public class ListViewGoodsAdapter extends BaseListAdapter<GoodsEntity>
 {
     private static final java.lang.String TAG ="ListViewGoodsAdapter" ;
     private int itemRescource;
@@ -49,7 +49,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
         init();
     }
 
-    public ListViewGoodsAdapter(Context context, List<Goods> list)
+    public ListViewGoodsAdapter(Context context, List<GoodsEntity> list)
     {
         super(context, list);
         init();
@@ -87,7 +87,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
         }
 
         //赋值
-        Goods temp = getItem(position);
+        GoodsEntity temp = getItem(position);
 //        listItemView.fresco_goods_item.setImageURI(temp.getImageUrl());
         imageManager.loadUrlImage(temp.getImageUrl(), listItemView.fresco_goods_item, R.mipmap.ic_place_img);
         listItemView.tv_goods_category_name.setText(temp.getCategoryName());
@@ -101,7 +101,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
     }
 
     // 设置数据
-    public void setData(List<Goods> list) {
+    public void setData(List<GoodsEntity> list) {
         clearAll();
         addALL(list);
 
@@ -118,11 +118,11 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
     }
 
     // 创建不满一屏的空数据
-    public List<Goods> createEmptyList(int size) {
-        List<Goods> emptyList = new ArrayList<>();
+    public List<GoodsEntity> createEmptyList(int size) {
+        List<GoodsEntity> emptyList = new ArrayList<>();
         if (size <= 0) return emptyList;
         for (int i=0; i<size; i++) {
-            emptyList.add(new Goods());
+            emptyList.add(new GoodsEntity());
         }
         return emptyList;
     }
@@ -146,8 +146,8 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //
 //import com.facebook.drawee.view.SimpleDraweeView;
 //import com.hzmy.zm.warehouse.R;
-//import com.hzmy.zm.warehouse.bean.Goods;
-//import com.hzmy.zm.warehouse.bean.drop_down.Goods;
+//import com.hzmy.zm.warehouse.bean.GoodsEntity;
+//import com.hzmy.zm.warehouse.bean.drop_down.GoodsEntity;
 //import com.hzmy.zm.warehouse.utils.LogUtils;
 //
 //import java.util.ArrayList;
@@ -163,7 +163,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //public class ListViewGoodsAdapter extends BaseAdapter
 //{
 //    private static final java.lang.String TAG ="ListViewGoodsAdapter" ;
-//    private List<Goods> mList;
+//    private List<GoodsEntity> mList;
 //    private Context mContext;
 //    private LayoutInflater  holderView;
 //    private int itemRescource;
@@ -178,7 +178,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //    }
 //
 //
-//    public   ListViewGoodsAdapter(Context context, List<Goods> lists)
+//    public   ListViewGoodsAdapter(Context context, List<GoodsEntity> lists)
 //    {
 //        this.mContext = context;
 //        this.mList = lists;
@@ -230,7 +230,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //        }
 //
 //        //赋值
-//        Goods temp = mList.get(position);
+//        GoodsEntity temp = mList.get(position);
 //        listItemView.fresco_goods_item.setImageURI(temp.getImageUrl());
 //        listItemView.tv_goods_category_name.setText(temp.getCategoryName());
 //        listItemView.tv_goods_name.setText(temp.getGoodsName());
@@ -244,7 +244,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //        return convertView;
 //    }
 //
-//    public void addALL(List<Goods> lists){
+//    public void addALL(List<GoodsEntity> lists){
 //        if(lists==null||lists.size()==0){
 //            return ;
 //        }
@@ -252,7 +252,7 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //    }
 //
 //    // 设置数据
-//    public void setData(List<Goods> list) {
+//    public void setData(List<GoodsEntity> list) {
 //        list.clear();
 //        addALL(list);
 //
@@ -271,11 +271,11 @@ public class ListViewGoodsAdapter extends BaseListAdapter<Goods>
 //    }
 //
 //    // 创建不满一屏的空数据
-//    public List<Goods> createEmptyList(int size) {
-//        List<Goods> emptyList = new ArrayList<>();
+//    public List<GoodsEntity> createEmptyList(int size) {
+//        List<GoodsEntity> emptyList = new ArrayList<>();
 //        if (size <= 0) return emptyList;
 //        for (int i=0; i<size; i++) {
-//            emptyList.add(new Goods());
+//            emptyList.add(new GoodsEntity());
 //        }
 //        return emptyList;
 //    }

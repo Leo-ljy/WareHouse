@@ -1,29 +1,29 @@
 package com.hzmy.zm.warehouse.bean;
 
-/**
- * 描述：                                                               <br>
- * 作者：        追梦                                                <br>
- * 邮箱：        1521541979@qq.com                        <br>
- * 公司：        杭州码友网络科技有限公司             <br>
- * 日期：        2016/7/28 13:24                               <br>
- */
-public class Goods
+//商品
+public class GoodsEntity
 {
+    private  long goodsId;
+    //商品图片
     private String imageUrl ;
-
+    //类别
     private long categoryId;
-
+    //型号
     private long typeId;
-
+    //商品数量
     private long number;
-
+    //商品名
     private String goodsName;
-
+    //数量单位名称
     private String unitName;
-
+    //类别名称
     private String categoryName;
-
+    //型号名称
     private String typeName;
+    //重量
+    private int weight;
+    //备注
+    private String remarkContent;
 
     public String getImageUrl()
     {

@@ -60,14 +60,14 @@
                 android:ellipsize="middle"
                 android:singleLine="true"
                 android:textColor="@color/black"
-                android:text="杭州威克达机电设备有限公司"/>
+                android:text="@string/default_company_name"/>
             <TextView
                 android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/black"
-                android:text="龙傲天"/>
+                android:text="@string/default_user_name"/>
         </LinearLayout>
         <ImageView
             android:layout_width="wrap_content"
