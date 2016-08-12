@@ -21,6 +21,7 @@ import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.GridHomeAdapter;
 import com.hzmy.zm.warehouse.third_party_libs.a_li_yun_wang.helper.LoginSampleHelper;
 import com.hzmy.zm.warehouse.third_party_libs.convenient_banner.NetworkImageHolderView;
+import com.hzmy.zm.warehouse.ui.ContactListActivity;
 import com.hzmy.zm.warehouse.ui.GoodsActivity;
 import com.hzmy.zm.warehouse.ui.MainActivity;
 import com.hzmy.zm.warehouse.utils.LogUtils;
@@ -147,10 +148,11 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 1:
-//                intent = new Intent(mAppContext, GoodsActivity.class);
-                Fragment f = mIMKit.getContactsFragment();
+                intent = new Intent(mAppContext, ContactListActivity.class);
 
-                ((MainActivity)getActivity()).changFragmentByTag(HomeFragment.this, f, getActivity().getSupportFragmentManager().beginTransaction(), "1");
+
+//                Fragment f = mIMKit.getContactsFragment();
+//                ((MainActivity)getActivity()).changFragmentByTag(HomeFragment.this, f, getActivity().getSupportFragmentManager().beginTransaction(), "1");
                 break;
             case 2:
                 intent = new Intent(mAppContext, GoodsActivity.class);

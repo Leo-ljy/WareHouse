@@ -62,6 +62,11 @@
                   android:theme="@style/NoActionBarTheme"
                   android:label="@string/select_category"
         />
+
+        <activity android:name=".ui.ContactListActivity"
+                  android:theme="@style/NoActionBarTheme"
+                  />
+
     </application>
 
 </manifest>

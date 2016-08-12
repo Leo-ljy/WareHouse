@@ -106,10 +106,10 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
 
     //-----------------drop down 开始-------------------
 //    @Bind(R.id.fv_top_filter)
-    FilterView fvTopFilter;
-    private FilterData filterData; // 筛选数据
+//    FilterView fvTopFilter;
+//    private FilterData filterData; // 筛选数据
 
-    private int mScreenHeight; // 屏幕高度
+//    private int mScreenHeight; // 屏幕高度
 
     //-----------------drop down 结束 -----------------------------
 
@@ -439,89 +439,91 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         if (mDropDownMenu.isShowing())
         {
             mDropDownMenu.closeMenu();
-        } else
+        }
+        else
         {
             super.onBackPressed();
         }
 
-        if (!fvTopFilter.isShowing())
-        {
-            super.onBackPressed();
-        } else
-        {
-            fvTopFilter.resetAllStatus();
-        }
+
+//        if (!fvTopFilter.isShowing())
+//        {
+//            super.onBackPressed();
+//        } else
+//        {
+//            fvTopFilter.resetAllStatus();
+//        }
     }
 //--------------------drop down menu 结束------------------------
 
     //--------------------drop down 开始------------------------
-    private void initDropDown()
-    {
-//        View view = LayoutInflater.from(mContext).inflate(R.layout.header_filter_layout, mListView, false);
-//        mListView.addHeaderView(view);
-        initData2();
-    }
-
-    private void initData2()
-    {
-        mScreenHeight = DensityUtil.getWindowHeight(this);
-        // ListView数据
-
-        // 筛选数据
-        filterData = new FilterData();
-        filterData.setCategory(ModelUtil.getCategoryData());
-        filterData.setSorts(ModelUtil.getSortData());
-        filterData.setFilters(ModelUtil.getFilterData());
-
-        // 设置筛选数据
-        fvTopFilter.setFilterData(mActivity, filterData);
-//        fvTopFilter.showFilterLayout(0);
-
-        // 分类Item点击
-        fvTopFilter.setOnItemCategoryClickListener(new FilterView.OnItemCategoryClickListener()
-        {
-            @Override
-            public void onItemCategoryClick(FilterTwoEntity entity)
-            {
-//                fillAdapter(ModelUtil.getCategoryTravelingData(entity));
-            }
-        });
-
-        // 排序Item点击
-        fvTopFilter.setOnItemSortClickListener(new FilterView.OnItemSortClickListener()
-        {
-            @Override
-            public void onItemSortClick(FilterEntity entity)
-            {
-//                fillAdapter(ModelUtil.getSortTravelingData(entity));
-            }
-        });
-
-        // 筛选Item点击
-        fvTopFilter.setOnItemFilterClickListener(new FilterView.OnItemFilterClickListener()
-        {
-            @Override
-            public void onItemFilterClick(FilterEntity entity)
-            {
-//                fillAdapter(ModelUtil.getFilterTravelingData(entity));
-            }
-        });
-    }
-
-    // 填充数据
-    private void fillAdapter(List<GoodsEntity> list)
-    {
-        if (list == null || list.size() == 0)
-        {
-            int height =
-                    mScreenHeight - DensityUtil.dip2px(mContext, 95); // 95 = 标题栏高度 ＋ FilterView的高度
-//            lv_adapter.setData(ModelUtil.getNoDataEntity(height));
-        } else
-        {
-            lv_adapter.setData(list);
-        }
-        lv_adapter.notifyDataSetChanged();
-    }
+//    private void initDropDown()
+//    {
+////        View view = LayoutInflater.from(mContext).inflate(R.layout.header_filter_layout, mListView, false);
+////        mListView.addHeaderView(view);
+//        initData2();
+//    }
+//
+//    private void initData2()
+//    {
+//        mScreenHeight = DensityUtil.getWindowHeight(this);
+//        // ListView数据
+//
+//        // 筛选数据
+//        filterData = new FilterData();
+//        filterData.setCategory(ModelUtil.getCategoryData());
+//        filterData.setSorts(ModelUtil.getSortData());
+//        filterData.setFilters(ModelUtil.getFilterData());
+//
+//        // 设置筛选数据
+//        fvTopFilter.setFilterData(mActivity, filterData);
+////        fvTopFilter.showFilterLayout(0);
+//
+//        // 分类Item点击
+//        fvTopFilter.setOnItemCategoryClickListener(new FilterView.OnItemCategoryClickListener()
+//        {
+//            @Override
+//            public void onItemCategoryClick(FilterTwoEntity entity)
+//            {
+////                fillAdapter(ModelUtil.getCategoryTravelingData(entity));
+//            }
+//        });
+//
+//        // 排序Item点击
+//        fvTopFilter.setOnItemSortClickListener(new FilterView.OnItemSortClickListener()
+//        {
+//            @Override
+//            public void onItemSortClick(FilterEntity entity)
+//            {
+////                fillAdapter(ModelUtil.getSortTravelingData(entity));
+//            }
+//        });
+//
+//        // 筛选Item点击
+//        fvTopFilter.setOnItemFilterClickListener(new FilterView.OnItemFilterClickListener()
+//        {
+//            @Override
+//            public void onItemFilterClick(FilterEntity entity)
+//            {
+////                fillAdapter(ModelUtil.getFilterTravelingData(entity));
+//            }
+//        });
+//    }
+//
+//    // 填充数据
+//    private void fillAdapter(List<GoodsEntity> list)
+//    {
+//        if (list == null || list.size() == 0)
+//        {
+//            int height =
+//                    mScreenHeight - DensityUtil.dip2px(mContext, 95); // 95 = 标题栏高度 ＋ FilterView的高度
+////            lv_adapter.setData(ModelUtil.getNoDataEntity(height));
+//        } else
+//        {
+//            lv_adapter.setData(list);
+//        }
+//        lv_adapter.notifyDataSetChanged();
+//    }
 
     //--------------------drop down 结束------------------------
 }
