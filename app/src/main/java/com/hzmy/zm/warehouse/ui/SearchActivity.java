@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.hzmy.zm.warehouse.R;
-import com.hzmy.zm.warehouse.config.IntentData;
+import com.hzmy.zm.warehouse.constant.IntentData;
 import com.hzmy.zm.warehouse.utils.ToastUtils;
 import com.hzmy.zm.warehouse.widgets.toolbar.ToolBarActivity;
 

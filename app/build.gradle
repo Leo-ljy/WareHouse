@@ -5,6 +5,7 @@ android {
     buildToolsVersion "23.0.3"
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.hzmy.zm.warehouse"
         minSdkVersion 14
         targetSdkVersion 23
@@ -15,8 +16,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
         }
+
     }
+
+
 }
 
 sourceSets {
@@ -24,6 +29,8 @@ sourceSets {
         java.srcDirs = ['src/main/java', 'src/main/java-gen']
     }
 }
+
+
 
 
 //MaterialDesign  第1部分
@@ -62,4 +69,5 @@ dependencies {
     compile project(':settingViewLibrary')
     // Glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile project(':One SDK')
 }

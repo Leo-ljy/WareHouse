@@ -9,7 +9,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,8 +30,7 @@ import com.hzmy.zm.warehouse.bean.GoodsEntity;
 import com.hzmy.zm.warehouse.bean.drop_down.FilterData;
 import com.hzmy.zm.warehouse.bean.drop_down.FilterEntity;
 import com.hzmy.zm.warehouse.bean.drop_down.FilterTwoEntity;
-import com.hzmy.zm.warehouse.bean.drop_down.TravelingEntity;
-import com.hzmy.zm.warehouse.config.Urls;
+import com.hzmy.zm.warehouse.constant.Urls;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.manage.VolleyManager;
 import com.hzmy.zm.warehouse.utils.DensityUtil;
 import com.hzmy.zm.warehouse.utils.LogUtils;
@@ -76,7 +73,6 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     PtrFrameLayout mPtrFrameLayout;
 
 
-
     private Context mContext;
     private Activity mActivity;
     private List<GoodsEntity> listDatas = new ArrayList<>();
@@ -98,10 +94,12 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     private ListDropDownAdapter sexAdapter;
     private ConstellationAdapter constellationAdapter;
 
-    private String citys[] = {"不限", "武汉", "北京", "上海", "成都", "广州", "深圳", "重庆", "天津", "西安", "南京", "杭州"};
+    private String citys[] = {"不限", "武汉", "北京", "上海", "成都", "广州", "深圳", "重庆", "天津", "西安", "南京",
+                              "杭州"};
     private String ages[] = {"不限", "18岁以下", "18-22岁", "23-26岁", "27-35岁", "35岁以上"};
     private String sexs[] = {"不限", "男", "女"};
-    private String constellations[] = {"不限", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"};
+    private String constellations[] = {"不限", "白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座",
+                                       "射手座", "摩羯座", "水瓶座", "双鱼座"};
 
     private int constellationPosition = 0;
     //-----------------Drop Down Menu 结束-----------------------
@@ -143,7 +141,6 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
         initDropDownMenu();
 //        initDropDown();
     }
-
 
 
     /**
@@ -333,115 +330,131 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     }
 
     //--------------------drop down menu 开始------------------------
-    public void  initDropDownMenu()
+    public void initDropDownMenu()
     {
 
-            //init city menu
-            final ListView cityView = new ListView(this);
-            cityAdapter = new GirdDropDownAdapter(this, Arrays.asList(citys));
-            cityView.setDividerHeight(0);
-            cityView.setAdapter(cityAdapter);
+        //init city menu
+        final ListView cityView = new ListView(this);
+        cityAdapter = new GirdDropDownAdapter(this, Arrays.asList(citys));
+        cityView.setDividerHeight(0);
+        cityView.setAdapter(cityAdapter);
 
-            //init age menu
-            final ListView ageView = new ListView(this);
-            ageView.setDividerHeight(0);
-            ageAdapter = new ListDropDownAdapter(this, Arrays.asList(ages));
-            ageView.setAdapter(ageAdapter);
+        //init age menu
+        final ListView ageView = new ListView(this);
+        ageView.setDividerHeight(0);
+        ageAdapter = new ListDropDownAdapter(this, Arrays.asList(ages));
+        ageView.setAdapter(ageAdapter);
 
-            //init sex menu
-            final ListView sexView = new ListView(this);
-            sexView.setDividerHeight(0);
-            sexAdapter = new ListDropDownAdapter(this, Arrays.asList(sexs));
-            sexView.setAdapter(sexAdapter);
+        //init sex menu
+        final ListView sexView = new ListView(this);
+        sexView.setDividerHeight(0);
+        sexAdapter = new ListDropDownAdapter(this, Arrays.asList(sexs));
+        sexView.setAdapter(sexAdapter);
 
-            //init constellation
-            final View constellationView = getLayoutInflater().inflate(R.layout.custom_layout, null);
-            GridView constellation = ButterKnife.findById(constellationView, R.id.constellation);
-            constellationAdapter = new ConstellationAdapter(this, Arrays.asList(constellations));
-            constellation.setAdapter(constellationAdapter);
-            TextView ok = ButterKnife.findById(constellationView, R.id.ok);
-            ok.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mDropDownMenu.setTabText(constellationPosition == 0 ? headers[3] : constellations[constellationPosition]);
-                    mDropDownMenu.closeMenu();
-                }
-            });
+        //init constellation
+        final View constellationView = getLayoutInflater().inflate(R.layout.custom_layout, null);
+        GridView constellation = ButterKnife.findById(constellationView, R.id.constellation);
+        constellationAdapter = new ConstellationAdapter(this, Arrays.asList(constellations));
+        constellation.setAdapter(constellationAdapter);
+        TextView ok = ButterKnife.findById(constellationView, R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                mDropDownMenu.setTabText(constellationPosition == 0 ? headers[3]
+                                                                    : constellations[constellationPosition]);
+                mDropDownMenu.closeMenu();
+            }
+        });
 
-            //init popupViews
-            popupViews.add(cityView);
-            popupViews.add(ageView);
-            popupViews.add(sexView);
-            popupViews.add(constellationView);
+        //init popupViews
+        popupViews.add(cityView);
+        popupViews.add(ageView);
+        popupViews.add(sexView);
+        popupViews.add(constellationView);
 
-            //add item click event
-            cityView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    cityAdapter.setCheckItem(position);
-                    mDropDownMenu.setTabText(position == 0 ? headers[0] : citys[position]);
-                    mDropDownMenu.closeMenu();
-                }
-            });
+        //add item click event
+        cityView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                cityAdapter.setCheckItem(position);
+                mDropDownMenu.setTabText(position == 0 ? headers[0] : citys[position]);
+                mDropDownMenu.closeMenu();
+            }
+        });
 
-            ageView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    ageAdapter.setCheckItem(position);
-                    mDropDownMenu.setTabText(position == 0 ? headers[1] : ages[position]);
-                    mDropDownMenu.closeMenu();
-                }
-            });
+        ageView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                ageAdapter.setCheckItem(position);
+                mDropDownMenu.setTabText(position == 0 ? headers[1] : ages[position]);
+                mDropDownMenu.closeMenu();
+            }
+        });
 
-            sexView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    sexAdapter.setCheckItem(position);
-                    mDropDownMenu.setTabText(position == 0 ? headers[2] : sexs[position]);
-                    mDropDownMenu.closeMenu();
-                }
-            });
+        sexView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                sexAdapter.setCheckItem(position);
+                mDropDownMenu.setTabText(position == 0 ? headers[2] : sexs[position]);
+                mDropDownMenu.closeMenu();
+            }
+        });
 
-            constellation.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    constellationAdapter.setCheckItem(position);
-                    constellationPosition = position;
-                }
-            });
+        constellation.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                constellationAdapter.setCheckItem(position);
+                constellationPosition = position;
+            }
+        });
 
-            //init context view
-            TextView contentView = new TextView(this);
-            contentView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        //init context view
+        TextView contentView = new TextView(this);
+        contentView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 //            contentView.setText("内容显示区域");
-            contentView.setGravity(Gravity.CENTER);
-            contentView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-            contentView.setVisibility(View.GONE);
+        contentView.setGravity(Gravity.CENTER);
+        contentView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        contentView.setVisibility(View.GONE);
 
 
-            //init dropdownview
-            mDropDownMenu.setDropDownMenu(Arrays.asList(headers), popupViews,contentView );
+        //init dropdownview
+        mDropDownMenu.setDropDownMenu(Arrays.asList(headers), popupViews, contentView);
     }
 
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         //退出activity前关闭菜单
-        if (mDropDownMenu.isShowing()) {
+        if (mDropDownMenu.isShowing())
+        {
             mDropDownMenu.closeMenu();
-        } else {
+        } else
+        {
             super.onBackPressed();
         }
 
-        if (!fvTopFilter.isShowing()) {
+        if (!fvTopFilter.isShowing())
+        {
             super.onBackPressed();
-        } else {
+        } else
+        {
             fvTopFilter.resetAllStatus();
         }
     }
 //--------------------drop down menu 结束------------------------
 
-//--------------------drop down 开始------------------------
+    //--------------------drop down 开始------------------------
     private void initDropDown()
     {
 //        View view = LayoutInflater.from(mContext).inflate(R.layout.header_filter_layout, mListView, false);
@@ -500,15 +513,15 @@ public class GoodsActivity extends ToolBarActivity implements Toolbar.OnMenuItem
     {
         if (list == null || list.size() == 0)
         {
-            int height = mScreenHeight - DensityUtil.dip2px(mContext, 95); // 95 = 标题栏高度 ＋ FilterView的高度
+            int height =
+                    mScreenHeight - DensityUtil.dip2px(mContext, 95); // 95 = 标题栏高度 ＋ FilterView的高度
 //            lv_adapter.setData(ModelUtil.getNoDataEntity(height));
-        } else {
+        } else
+        {
             lv_adapter.setData(list);
         }
         lv_adapter.notifyDataSetChanged();
     }
 
     //--------------------drop down 结束------------------------
-
-
 }

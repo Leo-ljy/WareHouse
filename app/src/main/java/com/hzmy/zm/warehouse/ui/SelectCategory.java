@@ -10,9 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.hzmy.zm.warehouse.R;
-import com.hzmy.zm.warehouse.config.IntentData;
-import com.hzmy.zm.warehouse.utils.LogUtils;
-import com.hzmy.zm.warehouse.utils.MethodsCompat;
+import com.hzmy.zm.warehouse.constant.IntentData;
 import com.hzmy.zm.warehouse.widgets.toolbar.ToolBarActivity;
 
 import butterknife.Bind;

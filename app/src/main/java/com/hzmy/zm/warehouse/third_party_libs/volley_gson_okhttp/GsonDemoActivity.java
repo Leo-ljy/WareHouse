@@ -1,6 +1,5 @@
 package com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.hzmy.zm.warehouse.R;
-import com.hzmy.zm.warehouse.config.Urls;
+import com.hzmy.zm.warehouse.constant.Urls;
 import com.hzmy.zm.warehouse.third_party_libs.glide.ImageManager;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.beans.Person;
 import com.hzmy.zm.warehouse.third_party_libs.volley_gson_okhttp.manage.VolleyManager;

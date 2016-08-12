@@ -2,30 +2,33 @@ package com.hzmy.zm.warehouse.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.mobileim.YWIMKit;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.hzmy.zm.warehouse.R;
 import com.hzmy.zm.warehouse.adapter.GridHomeAdapter;
+import com.hzmy.zm.warehouse.third_party_libs.a_li_yun_wang.helper.LoginSampleHelper;
 import com.hzmy.zm.warehouse.third_party_libs.convenient_banner.NetworkImageHolderView;
 import com.hzmy.zm.warehouse.ui.GoodsActivity;
+import com.hzmy.zm.warehouse.ui.MainActivity;
 import com.hzmy.zm.warehouse.utils.LogUtils;
 import com.hzmy.zm.warehouse.utils.ToastUtils;
 
 import java.util.Arrays;
 import java.util.List;
-
-import javax.xml.transform.Transformer;
+import java.util.jar.Manifest;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -63,7 +66,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     };
 
     private static  String TAG =  "HomeFragment";
-
+    private YWIMKit mIMKit;
 
     @Override
     protected View initView()
@@ -72,8 +75,17 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         ButterKnife.bind(this, homeFragmentView);
 
         initConvenient();
+        initAliYW();
 
         return homeFragmentView;
+    }
+
+    /**
+     * 初始化阿里云旺
+     */
+    private void initAliYW()
+    {
+        mIMKit = LoginSampleHelper.getInstance().getIMKit();
     }
 
 
@@ -135,7 +147,10 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 intent = new Intent(mAppContext, GoodsActivity.class);
                 break;
             case 1:
-                intent = new Intent(mAppContext, GoodsActivity.class);
+//                intent = new Intent(mAppContext, GoodsActivity.class);
+                Fragment f = mIMKit.getContactsFragment();
+
+                ((MainActivity)getActivity()).changFragmentByTag(HomeFragment.this, f, getActivity().getSupportFragmentManager().beginTransaction(), "1");
                 break;
             case 2:
                 intent = new Intent(mAppContext, GoodsActivity.class);
@@ -160,7 +175,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
                 break;
         }
 
-        startActivity(intent);
+        if (intent != null)  startActivity(intent);
 
     }
 

@@ -36,7 +36,7 @@ public class BaseActivity extends AppCompatActivity
 	protected void onDestroy() {
 		super.onDestroy();
 
-		
+		LogUtils.d("baseActivity  销毁了");
 		LogUtils.d("【初始化了BaseActivity   结束Activity&从堆栈中移除】");
 		// 结束Activity&从堆栈中移除
 		AppManager.getAppManager().finishActivity(this);

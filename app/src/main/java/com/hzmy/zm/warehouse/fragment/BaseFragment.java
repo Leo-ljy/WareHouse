@@ -1,7 +1,7 @@
 package com.hzmy.zm.warehouse.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
+//import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.hzmy.zm.warehouse.utils.LogUtils;
 
 
-//import android.support.v4.app.Fragment;
+import android.support.v4.app.Fragment;
 
 /**
  * @author 追梦

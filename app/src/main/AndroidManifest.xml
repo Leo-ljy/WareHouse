@@ -6,7 +6,7 @@
 
     <!--忽略materialDesign的最低版本，否则会报错  当前项目最低版本14，而MaterialDesign最低版本是16,所以要加上这句话-->
     <uses-sdk tools:overrideLibrary="
-    com.gc.materialdesign, com.litesuits.common, cn.trinea.android.common
+    com.gc.materialdesign, com.litesuits.common, cn.trinea.android.common,com.taobao.taorecorder,com.taobao.taorecorde_sdk
     "/>
 
 
@@ -24,17 +24,27 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup,android:name"
+    >
+
+        <activity android:name=".ui.LoginActivity"
                   android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-                  android:hardwareAccelerated="false"
-        >
+                  android:hardwareAccelerated="false" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <action android:name="android.net.wifi.STATE_CHANGE"/>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.MainActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+                  android:hardwareAccelerated="false"
+                  android:windowSoftInputMode="adjustPan|stateUnchanged"
+        >
+
         </activity>
 
         <activity android:name=".app.BaseActivity"/>
