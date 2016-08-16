@@ -532,12 +532,12 @@
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_select_dialog_singlechoice.xml"
     },
     {
-        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_feedback.xml",
-        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_feedback.xml"
-    },
-    {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_self_help_menu_click_progress_layout.xml",
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_self_help_menu_click_progress_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_feedback.xml",
+        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_feedback.xml"
     },
     {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_activity_at_msg_list.xml",
