@@ -100,12 +100,12 @@
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_first_new_msg_notify.xml"
     },
     {
-        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message_item.xml",
-        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_message_item.xml"
-    },
-    {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_sendstate.xml",
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_sendstate.xml"
+    },
+    {
+        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message_item.xml",
+        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_message_item.xml"
     },
     {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_show_gif_progress.xml",

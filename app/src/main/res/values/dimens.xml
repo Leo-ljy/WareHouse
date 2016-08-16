@@ -5,4 +5,8 @@
     <dimen name="rg_height">50dp</dimen>
     <dimen name="division_heigth">0.5dp</dimen>
     <dimen name="top_bar_height">56dp</dimen>
+
+    <!--阿里云旺-->
+    <dimen name="setting_item_height">44dip</dimen>
+    <dimen name="common_safe_margin">12dip</dimen>
 </resources>

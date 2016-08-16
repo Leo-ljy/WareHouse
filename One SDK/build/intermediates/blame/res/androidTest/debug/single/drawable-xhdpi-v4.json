@@ -584,12 +584,12 @@
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_reply_bar_album.png"
     },
     {
-        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_comment_l.9.png",
-        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_comment_l.9.png"
-    },
-    {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_search_icon.png",
         "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_search_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_comment_l.9.png",
+        "source": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\aliwx_comment_l.9.png"
     },
     {
         "merged": "C:\\Users\\GrowUp\\AndroidStudioProjects\\WareHouse\\One SDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\aliwx_g005.png",

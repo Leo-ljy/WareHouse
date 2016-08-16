@@ -10,6 +10,8 @@ import com.alibaba.mobileim.YWIMKit;
 import com.alibaba.mobileim.YWLoginParam;
 import com.alibaba.mobileim.channel.LoginParam;
 import com.alibaba.mobileim.channel.event.IWxCallback;
+import com.alibaba.mobileim.contact.IYWContactCacheUpdateListener;
+import com.alibaba.mobileim.contact.IYWContactOperateNotifyListener;
 import com.alibaba.mobileim.login.YWPwdType;
 import com.alibaba.mobileim.utility.IMAutoLoginInfoStoreUtil;
 import com.alibaba.tcms.env.EnvManager;
@@ -18,6 +20,8 @@ import com.alibaba.tcms.env.YWEnvManager;
 import com.alibaba.wxlib.util.SysUtil;
 import com.hzmy.zm.warehouse.app.AppContext;
 import com.hzmy.zm.warehouse.constant.SPName;
+import com.hzmy.zm.warehouse.third_party_libs.a_li_yun_wang.contact.ContactCacheUpdateListenerImpl;
+import com.hzmy.zm.warehouse.third_party_libs.a_li_yun_wang.contact.ContactOperateNotifyListenerImpl;
 import com.hzmy.zm.warehouse.ui.MainActivity;
 import com.hzmy.zm.warehouse.utils.SPUtils;
 
@@ -41,6 +45,41 @@ public class LoginSampleHelper
     public YWIMKit getIMKit() {
         return mIMKit;
     }
+
+
+    private IYWContactOperateNotifyListener mContactOperateNotifyListener = new ContactOperateNotifyListenerImpl();
+
+    private IYWContactCacheUpdateListener mContactCacheUpdateListener = new ContactCacheUpdateListenerImpl();
+
+    /**
+     * 联系人相关操作通知回调，SDK使用方可以实现此接口来接收联系人操作通知的监听
+     * 所有方法都在UI线程调用
+     * SDK会自动处理这些事件，一般情况下，用户不需要监听这个事件
+     * @author shuheng
+     *
+     */
+    private void addContactListeners(){
+        //添加联系人通知和更新监听，先删除再添加，以免多次添加该监听
+        removeContactListeners();
+        if(mIMKit!=null){
+            if(mContactOperateNotifyListener!=null)
+                mIMKit.getContactService().addContactOperateNotifyListener(mContactOperateNotifyListener);
+            if(mContactCacheUpdateListener!=null)
+                mIMKit.getContactService().addContactCacheUpdateListener(mContactCacheUpdateListener);
+
+        }
+    }
+
+    private void removeContactListeners(){
+        if(mIMKit!=null){
+            if(mContactOperateNotifyListener!=null)
+                mIMKit.getContactService().removeContactOperateNotifyListener(mContactOperateNotifyListener);
+            if(mContactCacheUpdateListener!=null)
+                mIMKit.getContactService().removeContactCacheUpdateListener(mContactCacheUpdateListener);
+
+        }
+    }
+
 
     /**
      * 初始化SDK
@@ -75,8 +114,8 @@ public class LoginSampleHelper
 
 
 //        添加联系人通知和更新监听
-//        TODO: 2016/8/11  在初始化后、登录前添加监听，离线的联系人系统消息才能触发监听器
-//        addContactListeners();
+//        在初始化后、登录前添加监听，离线的联系人系统消息才能触发监听器
+        addContactListeners();
 
     }
 

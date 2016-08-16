@@ -1,34 +1,35 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         multiDexEnabled true
         applicationId "com.hzmy.zm.warehouse"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-        }
 
-    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//
+//        }
+//    }
 
 
 }
 
-sourceSets {
-    main {
-        java.srcDirs = ['src/main/java', 'src/main/java-gen']
-    }
-}
+//sourceSets {
+//    main {
+//        java.srcDirs = ['src/main/java', 'src/main/java-gen']
+//    }
+//}
 
 
 
@@ -42,9 +43,13 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:24.1.1'
     //recyclerview
-    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+
+    //Android Design Support Library 要和v7包版本一致
+    compile 'com.android.support:design:24.1.1'
+
     //volley
     compile 'com.mcxiaoke.volley:library:1.0.19'
     //okhttp
@@ -56,8 +61,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     //greenDao
     compile 'org.greenrobot:greendao:2.2.0'
-    //Android Design Support Library 要和v7包版本一致
-    compile 'com.android.support:design:23.4.0'
+
     //MaterialDesign  第二部分
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
     //轮播图

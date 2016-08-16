@@ -67,6 +67,9 @@
                   android:theme="@style/NoActionBarTheme"
                   />
 
+        <!--阿里云旺-->
+        <activity android:name=".third_party_libs.a_li_yun_wang.contact.FindContactActivity"
+/>
     </application>
 
 </manifest>
