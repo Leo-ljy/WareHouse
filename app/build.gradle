@@ -13,6 +13,13 @@ android {
         versionName "1.0"
     }
 
+        dexOptions {
+            preDexLibraries true
+            javaMaxHeapSize "4g"
+            incremental true
+            dexInProcess = true
+        }
+
 
 //    buildTypes {
 //        release {
